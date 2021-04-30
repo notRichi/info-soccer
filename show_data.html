@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Feedback Sent</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="container">
+    <p align=center>&nbsp;</p>
+    <h1 align=center>
+        <font size="+1" class="bg-lgreen">The following information has been sent as your feedback:
+        </font>
+    </h1>
+
+    <table class=" table tablita table-striped ">
+        <thead class="thead-color">
+            <tr>
+                <th class="text-center">Form Field</th>
+                <th class="text-center">Field Value</th>
+            </tr>
+        </thead>
+        <script language="javascript">
+            var args = location.search.substr(1).split('&');
+            for (var i = 0; i < args.length; ++i) {
+                var parts = args[i].split('=');
+                if (parts != null) {
+                    var field = parts[0];
+                    var value = parts[1];
+                    if (value == null) {
+                        value = "null"
+                    } else {
+                        value = '"' + unescape(value.replace(/\+/g, ' ')) + '"';
+                    }
+
+                    document.writeln('<tr><td align="center">' + field + '</td>');
+                    document.writeln('<td align="center">' + value + '</td></tr>');
+                }
+            }
+        </script>
+
+        <noscript>
+<tr><td>
+<p>You need to turn on Javascript in your browser.</p>
+
+<p>In Microsoft Internet Explorer 4 or greater:</p>
+<ul>
+<li>From the "Tools" menu (in IE 4, it's the "View" menu), select "Internet Options".</li>
+<li>Click on the "Security" tab.</li>
+<li>Click on the "Custom Level" button. (In IE 4, select "Custom"
+and then click on "Settings...".)</li>
+<li>Under "Active scripting" make sure "Enable" is selected.</li>
+</ul>
+
+<p>In Netscape version 4 or greater:</p>
+<ul>
+<li>From the <b>Edit</b> menu, select <b>Preferences</b>.</li>
+<li>In the <b>Category</b> list on the left, click on the word "Advanced".</li>
+<li>In the panel on the right, make sure "Enable JavaScript" is checked.</li>
+<li>Click the <b>OK</b> button.</li>
+</ul>
+
+</td></tr>
+</noscript>
+
+    </table>
+    <button class="btn btn-lgreen"><a href="index.html">Go Home</a></button>
+</body>
+
+</html>

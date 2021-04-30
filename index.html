@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Home</title>
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.blue_grey-orange.min.css">
+    <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+</head>
+
+<body>
+    <header>
+
+        <nav id="naveg" class=" sidebar">
+            <h3 class="closed">X</h3>
+            <h5>NYSL</h5>
+
+
+            <ul>
+                <li> <a href="index.html">Home</a></li>
+                <li> <a class="closed" href="#" onclick="mostrarGameInfo()">Game information</a></li>
+                <li> <a class="closed" href="#" onclick="mostrarRegistration()">Registration</a></li>
+                <li> <a class="closed" href="#" onclick="mostrarRules()">Rules of play </a></li>
+                <li><a class="closed" href="#" onclick="mostrarAbout()">About NYSL</a></li>
+                <li> <a class="closed" href="#" onclick="mostrarContact()">Contact</a></li>
+            </ul>
+        </nav>
+
+
+        <section>
+            <img class=" opened menu-logo float-left col-xs-6 col-lg-6" src="img\menu.png" alt="menu">
+            <div id="logOn">
+                <button id="sign-in-button" class="btn btn-info sign-in col-xs-6 col-lg-6"> Log in </button>
+            </div>
+
+            <div id="logOff">
+                <button id="sign-out-button" class="btn btn-danger sign-in col-xs-6 col-lg-6">Log out</button>
+            </div>
+        </section>
+        <img class=" col-xs-4 logo col-sm-6" src="img\logo.png" alt="Logo">
+
+        <div class="container ">
+            <div class="row">
+                <h2 class=" col-xs-12 col-sm-12  subtitulo" id="subtitulo">HOME</h2>
+            </div>
+        </div>
+    </header>
+
+
+    <main id="home " class="container">
+
+
+
+        <!-- Navigation Bar -->
+        <div class="nav-post mt-2">
+            <div class="mdl-tab row ">
+                <div id="menu-recent" class="mx-auto col-xs-3 mdl-layout__tab is-active mdl-button mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">home</i>
+                </div>
+                <div id="menu-my-top-posts" class="mx-autocol-xs-3 mdl-layout__tab mdl-button mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">favorite</i>
+                </div>
+                <div id="menu-my-posts" class="mx-auto col-xs-3 mdl-layout__tab mdl-button mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">account_box</i>
+                </div>
+                <div id="add" class="btn-lgreen2 mx-auto col-xs-3 mdl-layout__tab mdl-button mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">mode_edit</i>
+                </div>
+            </div>
+            <!-- Show the add post form -->
+            <div class="bg-white">
+                <section class="mdl-grid content" id="add-post" style="display:none">
+                    <div class="mdl-cell mdl-cell--12-col mdl-grid">
+
+                        <!-- Card containing the inputs to add a new messages -->
+                        <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet
+                  mdl-cell--6-col-desktop">
+                            <div class="card">
+                                <h6 class="card-header bg-card">New post</h6>
+                            </div>
+                            <div class="card">
+                                <form id="message-form" action="#">
+                                    <div class="form-group mb-0">
+
+                                        <input type="text" class="form-control" id="new-post-title" placeholder="Title">
+                                        <textarea class="form-control" id="new-post-message" rows="4"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn  btn-lgreen3"> Add post</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Show a list of recent posts -->
+                <section class="mdl-grid content" id="recent-posts-list" style="display:none">
+                    <div class="posts-container mdl-cell mdl-cell--12-col mdl-grid">
+                    </div>
+                </section>
+
+                <!-- Show the list of user's posts -->
+                <section class="mdl-grid content" id="user-posts-list" style="display:none">
+                    <div class="posts-container mdl-cell mdl-cell--12-col mdl-grid">
+                    </div>
+                </section>
+
+                <!-- Show the list of top user's posts -->
+                <section class="mdl-grid content" id="top-user-posts-list" style="display:none">
+                    <div class="posts-container mdl-cell mdl-cell--12-col mdl-grid">
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+
+
+
+
+    </main>
+    <div id="gameinfo">
+
+
+        <section class="container mt-5 fuente-section row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <h4>Calendar :</h4>
+
+
+                <!-- september -->
+                <table class=" table tablita table-striped table-responsive-sm">
+
+                    <thead class="thead-color">
+
+                        <tr>
+                            <th>SEPTEMBER </th>
+                            <th>Teams </th>
+                            <th>Location</th>
+                            <th>Times</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" class="fecha">9/01</td>
+                            <td>U1 and U4</td>
+
+                            <td> AJ Katzenmaier</td>
+                            <td>9:30 a.m.</td>
+                        </tr>
+
+                        <tr>
+
+                            <td>U3 and U2 </td>
+                            <td>Greenbay</td>
+                            <td>1:00 p.m.</td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="2" class="fecha">9/08</td>
+                            <td>U5 and U6 </td>
+                            <td>Howard A Yeager </td>
+                            <td>9:30 a.m </td>
+                        </tr>
+
+                        <tr>
+                            <td>U6 and U1 </td>
+                            <td>Marjorie P Hart </td>
+                            <td>1:00 p.m.</td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="2" class="fecha">9/15</td>
+                            <td>U2 and U4 </td>
+                            <td>North</td>
+                            <td>9:30 a.m </td>
+                        </tr>
+
+                        <tr>
+
+                            <td>U3 and U5 </td>
+                            <td>AJ Katzenmaier </td>
+                            <td>1:00 p.m.</td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="2" class="fecha">9/22 </td>
+                            <td>U1 and U3 </td>
+                            <td>South</td>
+                            <td>9:30 a.m </td>
+                        </tr>
+
+                        <tr>
+                            <td>U2 and U6 </td>
+                            <td>Howard A Yeager</td>
+                            <td>1:00 p.m.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="fecha">9/29 </td>
+                            <td>U4 and U5 </td>
+                            <td>Greenbay </td>
+                            <td>9:30 a.m </td>
+
+                    </tbody>
+                </table>
+                <br>
+                <!-- october -->
+                <table class=" fuente-section table tablita table-striped table-responsive-sm">
+
+
+                    <thead class="thead-color">
+
+                        <tr>
+                            <th>OCTOBER</th>
+                            <th>Teams</th>
+                            <th>Location</th>
+                            <th>Times</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" class="fecha">10/06</td>
+                            <td>U2 and U5</td>
+                            <td>Marjorie P Hart</td>
+                            <td>9:30 a.m.</td>
+                        </tr>
+
+                        <tr>
+                            <td>U1 and U6</td>
+                            <td>South</td>
+                            <td>1:00 p.m.</td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="2" class="fecha">10/08</td>
+                            <td>U3 and U4</td>
+                            <td>Howard A Yeager</td>
+                            <td>9:30 a.m.</td>
+                        </tr>
+
+                        <tr>
+                            <td>U5 and U1</td>
+                            <td>Greenbay</td>
+                            <td>1:00 p.m.</td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="2" class="fecha">10/20</td>
+                            <td>U6 and U3</td>
+                            <td>North</td>
+                            <td>9:30 a.m.</td>
+                        </tr>
+
+                        <tr>
+
+                            <td>U2 and U4</td>
+                            <td>Marjorie P Hart</td>
+                            <td>1:00 p.m.</td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="2" class="fecha">10/27 </td>
+                            <td>U3 and U1</td>
+                            <td>AJ Katzenmaier</td>
+                            <td>9:30 a.m.</td>
+                        </tr>
+
+                        <tr>
+                            <td>U5 and U6</td>
+                            <td>Howard A Yeager</td>
+                            <td>1:00 p.m.</td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+
+                <h4>Location: </h4>
+                <table class="tablita">
+                    <tr class="container row">
+                        <td class="col-xs-12 ">
+                            <p>AJ Katzenmaier</p>
+                            <iframe id="ajk" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.7810520615835!2d-87.86492878454477!3d42.32586847918918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880f932fbc6ba7cd%3A0xcf2bbe275c6da815!2sA%20J%20Katzenmaier%20Elementary%20School!5e0!3m2!1ses-419!2sar!4v1570286762905!5m2!1ses-419!2sar"></iframe>
+                        </td>
+
+                        <td class="col-xs-12 ">
+                            <p> Greenbay </p>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2950.011012009334!2d-87.87105288454495!3d42.3209638791895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880f933bce5af881%3A0x740a7a7d548adce1!2sGreenbay%20Elementary%20School%20(K-5)!5e0!3m2!1ses-419!2sar!4v1570287171987!5m2!1ses-419!2sar"></iframe>
+                        </td>
+
+                        <td class="col-xs-12 ">
+                            <p>Howard A Yeager</p>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.5858505787587!2d-87.66511018455746!3d41.92326097921858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f852467%3A0xb6cb22b2f0358874!2sHoward%20A%20Yeager%20Elementary!5e0!3m2!1ses-419!2sar!4v1570287367604!5m2!1ses-419!2sar"></iframe>
+                        </td>
+
+                    </tr>
+                    <tr class="container row">
+
+                        <td class="col-xs-12 ">
+                            <p>Marjorie P Hart</p>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.289839348977!2d-87.64816138455728!3d41.92962287921805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2637f9d7%3A0xdbff5d5dfcfcfa35!2sMarjorie%20P%20Hart%20Elementary!5e0!3m2!1ses-419!2sar!4v1570287548380!5m2!1ses-419!2sar"></iframe>
+                        </td>
+
+                        <td class="col-xs-12 ">
+                            <p>North</p>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5938.821389709652!2d-87.6452479!3d41.9055292!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33af14860a5%3A0x5736e62f19086c62!2sNorth%20Elementary!5e0!3m2!1ses-419!2sar!4v1570316779301!5m2!1ses-419!2sar"></iframe>
+                        </td>
+
+                        <td class="col-xs-12 ">
+                            <p>South</p>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2954.3869435096153!2d-88.34395368454788!3d42.227545679196034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880f6d4a6d2e1093%3A0xdea3c745e6bb6aa0!2sSouth%20Elementary%20School!5e0!3m2!1ses-419!2sar!4v1570316862545!5m2!1ses-419!2sar"></iframe>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <div class="conteiner row mx-auto">
+                    <div class="col-xs-1">
+                        <p><strong>Facility Type:</strong> Outdoor</p>
+                        <p><strong>Additional Information:</strong> If deemed necessary by NYSL, games may be shortened or cancelled due to extreme weather conditions.</p>
+                        <p><strong>Please direct all questions to:</strong> Michael Randall, League Coordinator</p>
+                    </div>
+                    <address class="container row">
+                        <p class="col-xs-6"><strong>Phone:</strong> (630) 690-8132</p>
+                        <p class="col-xs-6"><strong>Email:</strong> <a href="mailto:michael.randall@chisoccer.org">michael.randall@chisoccer.org</a></p>
+                            </address>
+                </div>
+        </section>
+
+        </div>
+    </div>
+
+    <div id="registration">
+        <section class="container mt-5 fuente-section">
+            <!--INFORMACION IMPORTANTE-->
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <form action="show_data.html" method="GET">
+
+                        <label>Player's First Name: </label>
+                        <input type="text" name="first name" class="form-control">
+                        <label>Last Name: </label>
+                        <input type="text" name="last name" class="form-control">
+                        <label>Street Address: </label>
+                        <input size="61" type="text" name="street address" class="form-control">
+                        <label>City:</label>
+                        <input size="36" type="text" name="city" class="form-control">
+                        <label>Zip code:</label>
+                        <input size="21" type="text" name="zip code" class="form-control">
+                        <label>Birth Date(mm/dd/yyyy):</label>
+                        <input size="15" type="date" name="birthday" class="form-control">
+
+                        <br>
+                        <label>Gender:</label>
+
+                        <div class="form-check">
+                            <input type="radio" name="gender" class="form-check-input"> Female <br>
+                            <input type="radio" name="gender" class="form-check-input"> Male <br><br>
+                            <label class="row">Grade:</label>
+                            <div class="col-xs-6">
+                                <input type="radio" name="age" value="preschool"> Pre-School
+                                <input type="radio" name="age" value="first"> 1st
+                                <input type="radio" name="age" value="second"> 2st
+                            </div>
+                            <div class="col-xs-6">
+                                <input type="radio" name="age" value="three"> 3st
+                                <input type="radio" name="age" value="four"> 4th
+                                <input type="radio" name="age" value="five"> 5th <br><br>
+                            </div>
+
+                            <p><b>Which elementary school do you live near?</b></p> <br>
+
+                            <!--CLOSEST SCHOOL-->
+                            <label><b>Closest School:</b></label> <br><br>
+
+                            <table class="table table-responsive-sm">
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="katze">AJ Katzenmaier
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="marjorie">Marjorie P Hart
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="greenbay">Greenbay
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="north">North Elementary
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="howard">Howard A Yeager
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="south">South Elementary
+                                    </td>
+                                </tr>
+
+
+                            </table>
+                            <br><br>
+
+
+                            <!--POSITION-->
+                            <label><b>What position(s) do you normally play? (check all that apply)</b></label> <br><br>
+
+                            <table>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="Forward">Forward
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="Midfield">Midfield
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="Defense">Defense
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="Goalkeeper">Goalkeeper
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <br><br>
+
+                            <!--UNIFORM SIZE-->
+                            <label><b>Uniform Size:</b></label> <br><br>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="y_small">Youth Small
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="medium">Medium
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="y_medium">Youth Medium
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="large">Large
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="y_large">Youth Large
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="e_large">Extra Large
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="small">Small
+                                    </td>
+
+
+                            </table>
+                            <br><br>
+
+                            <p><b>Permission to Play</b></p>
+                            <p>I, the parent or guardian of the minor registrant, agree that the registrant and I will abide by all the rules of the Northside Youth Soccer League (NYSL). In recognizing the possibility of physical injury associated with soccer
+                                and in consideration for the “League” accepting the registrant for its soccer programs and activities, I hereby release, discharge, and/or otherwise indemnify NYSL, their employees and associated personnel and volunteers,including
+                                the facilities used for practices and games, against any claim by or on behalf of the registrant as a result of the registrant’s participation in the programand/orbeing transported to or from NYSL sponsored activities,which
+                                transportation
+                            </p>
+                            <p>
+                                By signing below, I herebyagree andauthorizethe above. In addition, By entering your name below, I also acknowledge that I have read the cancellation policy and agree to its terms.
+                            </p>
+                            <br><br>
+
+                            <label>Parent/GuardianSignature: </label>
+                            <input size="30" type="text" name="signature" required="">
+                            <br><br>
+                            <label>Date: </label>
+                            <input size="10" type="date" name="date" required=""><br><br>
+                            <button type="submit" class="btn btn-lgreen">Submit</button>
+                        </div>
+        </section>
+
+        </div>
+
+        <div id="rules">
+            <section class="container mt-5 fuente-section">
+
+                <section>
+                    <h3 class="text-center">Northside Youth Soccer League </h3>
+                    <h4>RULES OF PLAY & POLICIES </h4>
+                    <p>FIFA rules shall govern NYSL play except as modified herein. </p>
+                </section>
+                <div>
+                    <h4>SPORTSMANSHIP</h4>
+                </div>
+                <div>
+                    <li type="square" class="text-form">&nbsp;The common interest that members of the Association share is to inspire youth to practice the ideals of sportsmanship and fair play. Any player, coach, team, parent, spectator, administrator or referee whose behavior detracts
+                        from this purpose is subject to disciplinary action regardless of technical soccer background, expertise, accomplishments or standing &nbsp
+                    </li>
+                </div>
+                <h4>FIFA FIELD REGULATIONS</h4>
+
+                <ol class="text-form">
+
+                    <li><b>DIMENSIONS</b>.FIFA Law 1 provides for flexible external field dimensions within a given maximum and minimum width and length. These dimensions should be adhered to for all fields used by teams under 12 and older. &nbsp
+                    </li>
+                    <br>
+
+                    <li> <b>COMPETITION FIELDS</b>. Fields used within the competition program must be a minimum of 100 x 60 yards.Leagues, districts or associations participating in the state competition program that are unable to provide a field that meets
+                        these minimum requirements must advise the State Competition Board which will assign its Fields Committee to inspect the field and recommend to the Board whether or not a waiver of the minimum dimensions should be granted. Teams
+                        from leagues, districts or associations that are unable to provide an acceptable field may be required to play all their games away. &nbsp
+
+                    </li>
+                    <br>
+                    <li> <b>FIELDS USED BY YOUNG AGE GROUPS</b>
+
+                        <ol type="a">
+                            <li>U-6 play on a field approximately 20 X 40 yards with no penalty areas. Fields for older age groups should be progressively larger.
+                            </li>
+                            <li>
+                                U-8 plays on a field 40-50 yards in length and 20-30 yards width.
+                            </li>
+                            <li>
+                                U-10 play on a field 70-80 yards in length and 40-50 yards in width.
+                            </li>
+                            <li>
+                                In addition, fields used by young age groups may have their internal dimensions and size of goal similarly modified.
+                            </li>
+                    </li>
+                    </ol>
+                    </li>
+
+                </ol>
+                <h4>ALL-PLAY </h4>
+
+                <div class="text-form">
+                    <li type="square">All-play means that every recreation player on every team shall play atleast fifty percent of each game. Coaches in the competition program are encouraged to play their players 50% of each game.
+                    </li>
+                    <li type="circle" class="indent"> A Coach shall be permitted to not play a player 50% of each game under special circumstances, e.g., unexcused absences from practice and/or games, ungentlemanly conduct at practice and/or games, and injuries.</li>
+                </div>
+            </section>
+        </div>
+        <div id="about">
+
+            <section class="container mt-5 fuente-section">
+
+                <h3>Mission</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, veniam! Enim pariatur possimus ea voluptatem. Totam corrupti soluta omnis! Repellat corrupti aperiam repellendus esse ducimus accusamus earum molestias vel nulla.</p>
+                <h3>Vision</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere repudiandae, hic blanditiis quasi explicabo qui quas exercitationem. Minima, voluptas ab pariatur optio quam ullam incidunt sit, animi repellendus beatae eligendi.</p>
+                <h3>General Information</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus eligendi facilis molestias necessitatibus labore architecto numquam maiores reprehenderit, repellendus repudiandae explicabo cupiditate optio incidunt eum assumenda corrupti
+                    sequi voluptate molestiae!</p>
+            </section>
+        </div>
+        <div id="contact">
+
+            <section class="container mt-5 fuente-section">
+
+                <p> Please email us at <a href="mailto:nysl@chisoccer">nysl@chisoccer</a></p>
+                <p>We will reply to your email as soon we can</p>
+
+            </section>
+        </div>
+</body>
+<script src="/__/firebase/7.5.2/firebase-app.js"></script>
+<script src="/__/firebase/7.5.2/firebase-auth.js"></script>
+<script src="/__/firebase/7.5.2/firebase-database.js"></script>
+<script src="/__/firebase/init.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script>
+
+</html>
